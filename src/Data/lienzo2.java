@@ -26,7 +26,7 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
     Thread hilo;
     
     
-    private boolean tope;
+    private boolean tope=false;
 
     public lienzo2() {
         initComponents();
@@ -131,7 +131,7 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
                 }
                 if(n==1){
                 
-                    
+                    tope=false;
         while (x >= 10) { // Mover hacia la izquierda
             Thread.sleep(90);
             x -= 10;
@@ -161,11 +161,12 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
                 SG.interfaz.AddMaterias(SG.nInventario, jParent, container, Color.BLUE);
                 SG.interfaz.ActualizarDatos();
                 
+                SG.interfaz.InventarioAProduccion();
                 break;
                 
                 
                 }else if(n==2){
-                    
+                    tope=false;
                     SG.nInventario-=1;
                 SG.nProduccion+=1;
                 
@@ -196,10 +197,12 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
                 JPanel container2 = SG.interfaz.getJProdunccionContenedor();
                 SG.interfaz.AddMaterias(SG.nProduccion, jParent2, container2, Color.GREEN);
                 SG.interfaz.ActualizarDatos();
+                
+                SG.interfaz.ProduccionAEmapaquetado();
                     break;
                     
                 }else if(n==3){
-                    
+                    tope=false;
                     SG.nProduccion-=1;
                 SG.nEmpaquetado+=1;
                 
@@ -235,12 +238,13 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
                 
                         
                         SG.interfaz.ActualizarDatos();
+                        SG.interfaz.EmpaquetadoASalida();
                         break;
                         
                         
                         
                 }else if(n==4){
-                    
+                    tope=false;
                     SG.nEmpaquetado-=1;        
                         SG.nSalida+=1;
                 
@@ -274,6 +278,7 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
                 SG.interfaz.AddMaterias(SG.nSalida, jParent2, container2, Color.PINK);
                 
                 SG.interfaz.ActualizarDatos();
+                SG.interfaz.SalidaAFinal();
                 break;
                 
                 
@@ -281,7 +286,7 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
                 
                 
                 }else if(n==5){
-                    
+                    tope=false;
                     
                     SG.nFinal+=1;        
                         SG.nSalida-=1;

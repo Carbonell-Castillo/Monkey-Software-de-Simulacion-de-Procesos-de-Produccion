@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
@@ -54,96 +55,40 @@ public class interfaz2 extends javax.swing.JFrame implements Observer{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        bninicio = new javax.swing.JButton();
-        bnpausar = new javax.swing.JButton();
-        bncontinuar = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         lblcontador = new javax.swing.JLabel();
-        jProduccion = new javax.swing.JPanel();
-        jProduccionContenedor = new javax.swing.JPanel();
-        lblProduccion = new javax.swing.JLabel();
         JEmpaquetado = new javax.swing.JPanel();
         JEmpaquetadoContenedor = new javax.swing.JPanel();
         lblEmpaquetado = new javax.swing.JLabel();
+        lienzo4 = new Data.lienzo2();
+        lienzo5 = new Data.lienzo2();
         JSalida = new javax.swing.JPanel();
         JSalidaContenedor = new javax.swing.JPanel();
         lblSalida = new javax.swing.JLabel();
+        bninicio = new javax.swing.JButton();
+        bnpausar = new javax.swing.JButton();
+        bncontinuar = new javax.swing.JButton();
         JpanelInventario = new javax.swing.JPanel();
         jInventario = new javax.swing.JPanel();
         lblInventario = new javax.swing.JLabel();
-        lienzo1 = new Data.lienzo2();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         lienzo2 = new Data.lienzo2();
-        lienzo3 = new Data.lienzo2();
-        lienzo4 = new Data.lienzo2();
-        lienzo5 = new Data.lienzo2();
+        jProduccion = new javax.swing.JPanel();
+        jProduccionContenedor = new javax.swing.JPanel();
+        lblProduccion = new javax.swing.JLabel();
+        lienzo1 = new Data.lienzo2();
         txtInicio = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        lienzo3 = new Data.lienzo2();
         txtFinal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
 
-        bninicio.setText("Inicio");
-        bninicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bninicioActionPerformed(evt);
-            }
-        });
-
-        bnpausar.setText("Pausa");
-        bnpausar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bnpausarActionPerformed(evt);
-            }
-        });
-
-        bncontinuar.setText("Continuar");
-        bncontinuar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bncontinuarActionPerformed(evt);
-            }
-        });
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         lblcontador.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         lblcontador.setText("00:00:00");
-
-        jProduccion.setBackground(new java.awt.Color(153, 255, 102));
-        jProduccion.setPreferredSize(new java.awt.Dimension(295, 161));
-
-        jProduccionContenedor.setBackground(new java.awt.Color(153, 255, 102));
-
-        javax.swing.GroupLayout jProduccionContenedorLayout = new javax.swing.GroupLayout(jProduccionContenedor);
-        jProduccionContenedor.setLayout(jProduccionContenedorLayout);
-        jProduccionContenedorLayout.setHorizontalGroup(
-            jProduccionContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jProduccionContenedorLayout.setVerticalGroup(
-            jProduccionContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 129, Short.MAX_VALUE)
-        );
-
-        lblProduccion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblProduccion.setText("Produccion: ");
-
-        javax.swing.GroupLayout jProduccionLayout = new javax.swing.GroupLayout(jProduccion);
-        jProduccion.setLayout(jProduccionLayout);
-        jProduccionLayout.setHorizontalGroup(
-            jProduccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jProduccionContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jProduccionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblProduccion)
-                .addContainerGap(214, Short.MAX_VALUE))
-        );
-        jProduccionLayout.setVerticalGroup(
-            jProduccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jProduccionLayout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(lblProduccion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jProduccionContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
 
         JEmpaquetado.setBackground(new java.awt.Color(255, 204, 255));
         JEmpaquetado.setPreferredSize(new java.awt.Dimension(295, 161));
@@ -158,7 +103,7 @@ public class interfaz2 extends javax.swing.JFrame implements Observer{
         );
         JEmpaquetadoContenedorLayout.setVerticalGroup(
             JEmpaquetadoContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 127, Short.MAX_VALUE)
+            .addGap(0, 258, Short.MAX_VALUE)
         );
 
         lblEmpaquetado.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -178,8 +123,30 @@ public class interfaz2 extends javax.swing.JFrame implements Observer{
             JEmpaquetadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JEmpaquetadoLayout.createSequentialGroup()
                 .addComponent(lblEmpaquetado)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(JEmpaquetadoContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout lienzo4Layout = new javax.swing.GroupLayout(lienzo4);
+        lienzo4.setLayout(lienzo4Layout);
+        lienzo4Layout.setHorizontalGroup(
+            lienzo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 47, Short.MAX_VALUE)
+        );
+        lienzo4Layout.setVerticalGroup(
+            lienzo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout lienzo5Layout = new javax.swing.GroupLayout(lienzo5);
+        lienzo5.setLayout(lienzo5Layout);
+        lienzo5Layout.setHorizontalGroup(
+            lienzo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 168, Short.MAX_VALUE)
+        );
+        lienzo5Layout.setVerticalGroup(
+            lienzo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 66, Short.MAX_VALUE)
         );
 
         JSalida.setBackground(new java.awt.Color(255, 204, 204));
@@ -219,6 +186,27 @@ public class interfaz2 extends javax.swing.JFrame implements Observer{
                 .addComponent(JSalidaContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        bninicio.setText("Inicio");
+        bninicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bninicioActionPerformed(evt);
+            }
+        });
+
+        bnpausar.setText("Pausa");
+        bnpausar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bnpausarActionPerformed(evt);
+            }
+        });
+
+        bncontinuar.setText("Continuar");
+        bncontinuar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bncontinuarActionPerformed(evt);
+            }
+        });
+
         JpanelInventario.setBackground(new java.awt.Color(102, 153, 255));
         JpanelInventario.setPreferredSize(new java.awt.Dimension(295, 161));
 
@@ -228,7 +216,7 @@ public class interfaz2 extends javax.swing.JFrame implements Observer{
         jInventario.setLayout(jInventarioLayout);
         jInventarioLayout.setHorizontalGroup(
             jInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 295, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jInventarioLayout.setVerticalGroup(
             jInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,24 +241,10 @@ public class interfaz2 extends javax.swing.JFrame implements Observer{
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JpanelInventarioLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lblInventario)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
-
-        javax.swing.GroupLayout lienzo1Layout = new javax.swing.GroupLayout(lienzo1);
-        lienzo1.setLayout(lienzo1Layout);
-        lienzo1Layout.setHorizontalGroup(
-            lienzo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 159, Short.MAX_VALUE)
-        );
-        lienzo1Layout.setVerticalGroup(
-            lienzo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jButton1.setText("Regresar");
-
-        jButton2.setText("Reporte");
 
         javax.swing.GroupLayout lienzo2Layout = new javax.swing.GroupLayout(lienzo2);
         lienzo2.setLayout(lienzo2Layout);
@@ -280,143 +254,197 @@ public class interfaz2 extends javax.swing.JFrame implements Observer{
         );
         lienzo2Layout.setVerticalGroup(
             lienzo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 152, Short.MAX_VALUE)
+        );
+
+        jProduccion.setBackground(new java.awt.Color(153, 255, 102));
+        jProduccion.setPreferredSize(new java.awt.Dimension(295, 161));
+
+        jProduccionContenedor.setBackground(new java.awt.Color(153, 255, 102));
+
+        javax.swing.GroupLayout jProduccionContenedorLayout = new javax.swing.GroupLayout(jProduccionContenedor);
+        jProduccionContenedor.setLayout(jProduccionContenedorLayout);
+        jProduccionContenedorLayout.setHorizontalGroup(
+            jProduccionContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+        jProduccionContenedorLayout.setVerticalGroup(
+            jProduccionContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 129, Short.MAX_VALUE)
+        );
+
+        lblProduccion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblProduccion.setText("Produccion: ");
+
+        javax.swing.GroupLayout jProduccionLayout = new javax.swing.GroupLayout(jProduccion);
+        jProduccion.setLayout(jProduccionLayout);
+        jProduccionLayout.setHorizontalGroup(
+            jProduccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jProduccionContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jProduccionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblProduccion)
+                .addContainerGap(223, Short.MAX_VALUE))
+        );
+        jProduccionLayout.setVerticalGroup(
+            jProduccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jProduccionLayout.createSequentialGroup()
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(lblProduccion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jProduccionContenedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        javax.swing.GroupLayout lienzo1Layout = new javax.swing.GroupLayout(lienzo1);
+        lienzo1.setLayout(lienzo1Layout);
+        lienzo1Layout.setHorizontalGroup(
+            lienzo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 177, Short.MAX_VALUE)
+        );
+        lienzo1Layout.setVerticalGroup(
+            lienzo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 79, Short.MAX_VALUE)
+        );
+
+        txtInicio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtInicio.setText("Inicio: 10");
+
+        jButton2.setText("Reporte");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Regresar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout lienzo3Layout = new javax.swing.GroupLayout(lienzo3);
         lienzo3.setLayout(lienzo3Layout);
         lienzo3Layout.setHorizontalGroup(
             lienzo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 108, Short.MAX_VALUE)
+            .addGap(0, 257, Short.MAX_VALUE)
         );
         lienzo3Layout.setVerticalGroup(
             lienzo3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 38, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout lienzo4Layout = new javax.swing.GroupLayout(lienzo4);
-        lienzo4.setLayout(lienzo4Layout);
-        lienzo4Layout.setHorizontalGroup(
-            lienzo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 47, Short.MAX_VALUE)
-        );
-        lienzo4Layout.setVerticalGroup(
-            lienzo4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout lienzo5Layout = new javax.swing.GroupLayout(lienzo5);
-        lienzo5.setLayout(lienzo5Layout);
-        lienzo5Layout.setHorizontalGroup(
-            lienzo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 143, Short.MAX_VALUE)
-        );
-        lienzo5Layout.setVerticalGroup(
-            lienzo5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 55, Short.MAX_VALUE)
-        );
-
-        txtInicio.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtInicio.setText("Inicio: 10");
-
         txtFinal.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtFinal.setText("Final: 10");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblcontador, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(280, 280, 280)
-                        .addComponent(jButton2)
-                        .addGap(20, 20, 20))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(bninicio)
-                                .addGap(83, 83, 83)
-                                .addComponent(bnpausar)
-                                .addGap(61, 61, 61)
-                                .addComponent(bncontinuar))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(JEmpaquetado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lienzo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addComponent(txtFinal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(12, 12, 12)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(lienzo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lienzo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lienzo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addGap(350, 350, 350)
+                                .addComponent(lblcontador, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 119, Short.MAX_VALUE)
                         .addComponent(lienzo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lienzo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(87, 87, 87)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(JEmpaquetado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lienzo3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jProduccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JpanelInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(80, 80, 80))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jProduccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JEmpaquetado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblcontador)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2))
-                        .addGap(97, 97, 97)
-                        .addComponent(lienzo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lienzo2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lienzo4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(lienzo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(txtInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(lienzo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(6, 6, 6))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JSalida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JpanelInventario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(49, 49, 49))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JpanelInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jProduccion, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(bninicio)
+                .addGap(18, 18, 18)
+                .addComponent(bnpausar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bncontinuar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblcontador, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton1)
+                        .addComponent(jButton2)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JEmpaquetado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jProduccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(lienzo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lienzo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lienzo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(4, 4, 4)
+                        .addComponent(JpanelInventario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lienzo4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lienzo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bninicio)
                     .addComponent(bnpausar)
                     .addComponent(bncontinuar))
-                .addGap(32, 32, 32))
+                .addGap(91, 91, 91))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -543,7 +571,7 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
     
     
     public void startMaterias(){
-        Timer timer = new Timer(2000, new ActionListener() {
+        Timer timer = new Timer(200, new ActionListener() {
         
         //timepo de inicio a inventario
            int index = 0;
@@ -576,7 +604,7 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
     }
     
    public void InicioAInventario(){
-    Timer timer = new Timer(4000, new ActionListener() {
+    Timer timer = new Timer(2000, new ActionListener() {
         int index = 0;
 
         public void actionPerformed(ActionEvent e) {
@@ -585,9 +613,7 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
         lienzo1.inicio(1);
         
             index++;
-                if(index==1){
-        InventarioAProduccion();
-        }
+        
             if (index == SG.nPelotas) {
                 ((Timer) e.getSource()).stop(); // Detiene el temporizador
             }
@@ -601,7 +627,7 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
    public void InventarioAProduccion(){
     Timer timer = new Timer(SG.tiempoInventario, new ActionListener() {
         int index = 0;
-
+        boolean firstTime = true; // variable para controlar la primera ejecución
         public void actionPerformed(ActionEvent e) {
             // Llama a la función que deseas
         lienzo2.setColor(Color.BLUE);
@@ -609,7 +635,16 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
         
             index++;
             if(index==1){
-        ProduccionAEmapaquetado();
+                ((Timer) e.getSource()).stop(); // Detiene el temporizador
+                if(lienzo2.getTope()){
+        //            ProduccionAEmapaquetado();
+                }
+        
+        
+            /*if (firstTime) {
+                    ((Timer) e.getSource()).setDelay(SG.tiempoProduccion+4000); // cambia el delay después de la primera ejecución
+                    firstTime = false;
+                }*/
         }
             if (index == SG.nPelotas) {
                 ((Timer) e.getSource()).stop(); // Detiene el temporizador
@@ -622,32 +657,39 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
     }
    
    public void ProduccionAEmapaquetado(){
-    Timer timer = new Timer(SG.tiempoProduccion, new ActionListener() {
+    Integer time = SG.tiempoProduccion;
+    Timer timer = new Timer(time, new ActionListener() {
         int index = 0;
+        boolean firstTime = true; // variable para controlar la primera ejecución
 
         public void actionPerformed(ActionEvent e) {
-            // Llama a la función que deseas
-        lienzo3.setColor(Color.GREEN);
-        lienzo3.inicio(3);
-        
+            lienzo3.setColor(Color.GREEN);
+            lienzo3.inicio(3);
+
             index++;
-               if(index==1){
-        EmpaquetadoASalida();
-        }
+            if (index == 1) {
+                ((Timer) e.getSource()).stop(); // Detiene el temporizador
+                if(lienzo3.getTope()){
+          //          EmpaquetadoASalida();
+                }
+                
+                
+            }
             if (index == SG.nPelotas) {
                 ((Timer) e.getSource()).stop(); // Detiene el temporizador
             }
         }
     });
     timer.start(); // Inicia el temporizador
-        System.out.println("Continua2");
-    
-    }
+    System.out.println("Continua2");
+}
+
    
    public void EmpaquetadoASalida(){
-    Timer timer = new Timer(SG.tiempoEmpaquetado, new ActionListener() {
+       Integer time= SG.tiempoEmpaquetado;
+    Timer timer = new Timer(time, new ActionListener() {
         int index = 0;
-
+    boolean firstTime = true; // variable para controlar la primera ejecución
         public void actionPerformed(ActionEvent e) {
             // Llama a la función que deseas
         lienzo4.setColor(Color.PINK);
@@ -655,8 +697,14 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
         
             index++;
             if(index==1){
-        SalidaAFinal();
+                ((Timer) e.getSource()).stop(); // Detiene el temporizador
+                if(lienzo4.getTope()){
+            //        SalidaAFinal();        
+                }
+        
+           
         }
+            
             if (index == SG.nPelotas) {
                 ((Timer) e.getSource()).stop(); // Detiene el temporizador
             }
@@ -668,14 +716,19 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
     }
     
    public void SalidaAFinal(){
+       
     Timer timer = new Timer(SG.tiempoSalida, new ActionListener() {
         int index = 0;
-
+    boolean firstTime = true; // variable para controlar la primera ejecución
         public void actionPerformed(ActionEvent e) {
             // Llama a la función que deseas
         lienzo5.setColor(Color.PINK);
         lienzo5.inicio(5);
+        
             index++;
+            if(index==1){
+            ((Timer) e.getSource()).stop(); // Detiene el temporizador
+        }
             if (index == SG.nPelotas) {
                 ((Timer) e.getSource()).stop(); // Detiene el temporizador
             }
@@ -697,6 +750,10 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
         
         // Se pausea los hilos 
         lienzo1.pausar();
+        lienzo2.pausar();
+        lienzo3.pausar();
+        lienzo4.pausar();
+        lienzo5.pausar();
         reloj.suspend();
     }//GEN-LAST:event_bnpausarActionPerformed
 
@@ -704,8 +761,30 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
         
         // Se continua el hilo que se termino
         lienzo1.continuar();
+        lienzo2.continuar();
+        lienzo3.continuar();
+        lienzo4.continuar();
+        lienzo5.continuar();
         reloj.resume();
     }//GEN-LAST:event_bncontinuarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            // TODO add your handling code here:
+            SG.generateReport();
+        } catch (IOException ex) {
+            Logger.getLogger(interfaz2.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Main main = new Main();
+        main.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
 
@@ -721,6 +800,7 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jInventario;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jProduccion;
     private javax.swing.JPanel jProduccionContenedor;
     private javax.swing.JLabel lblEmpaquetado;
