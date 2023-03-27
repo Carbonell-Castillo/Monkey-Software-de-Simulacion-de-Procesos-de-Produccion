@@ -25,7 +25,7 @@ import javax.swing.JPanel;
  *
  * @author diego
  */
-public class interfaz2 extends javax.swing.JFrame implements Observer{
+public class Interfaz extends javax.swing.JFrame implements Observer{
 
     /**
      * Creates new form interfaz
@@ -38,7 +38,7 @@ public class interfaz2 extends javax.swing.JFrame implements Observer{
     */
     Thread reloj = new Thread(temporizador);
     
-    public interfaz2() {
+    public Interfaz() {
         initComponents();
         
         this.setLocationRelativeTo(null);
@@ -60,8 +60,8 @@ public class interfaz2 extends javax.swing.JFrame implements Observer{
         JEmpaquetado = new javax.swing.JPanel();
         JEmpaquetadoContenedor = new javax.swing.JPanel();
         lblEmpaquetado = new javax.swing.JLabel();
-        lienzo4 = new Data.lienzo2();
-        lienzo5 = new Data.lienzo2();
+        lienzo4 = new Data.Lienzo();
+        lienzo5 = new Data.Lienzo();
         JSalida = new javax.swing.JPanel();
         JSalidaContenedor = new javax.swing.JPanel();
         lblSalida = new javax.swing.JLabel();
@@ -71,15 +71,15 @@ public class interfaz2 extends javax.swing.JFrame implements Observer{
         JpanelInventario = new javax.swing.JPanel();
         jInventario = new javax.swing.JPanel();
         lblInventario = new javax.swing.JLabel();
-        lienzo2 = new Data.lienzo2();
+        lienzo2 = new Data.Lienzo();
         jProduccion = new javax.swing.JPanel();
         jProduccionContenedor = new javax.swing.JPanel();
         lblProduccion = new javax.swing.JLabel();
-        lienzo1 = new Data.lienzo2();
+        lienzo1 = new Data.Lienzo();
         txtInicio = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        lienzo3 = new Data.lienzo2();
+        lienzo3 = new Data.Lienzo();
         txtFinal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -773,7 +773,7 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
             // TODO add your handling code here:
             SG.generateReport();
         } catch (IOException ex) {
-            Logger.getLogger(interfaz2.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
@@ -808,11 +808,11 @@ public void AddMaterias(int n, JPanel parentPanel, JPanel container, Color color
     private javax.swing.JLabel lblProduccion;
     private javax.swing.JLabel lblSalida;
     private javax.swing.JLabel lblcontador;
-    private Data.lienzo2 lienzo1;
-    private Data.lienzo2 lienzo2;
-    private Data.lienzo2 lienzo3;
-    private Data.lienzo2 lienzo4;
-    private Data.lienzo2 lienzo5;
+    private Data.Lienzo lienzo1;
+    private Data.Lienzo lienzo2;
+    private Data.Lienzo lienzo3;
+    private Data.Lienzo lienzo4;
+    private Data.Lienzo lienzo5;
     private javax.swing.JLabel txtFinal;
     private javax.swing.JLabel txtInicio;
     // End of variables declaration//GEN-END:variables

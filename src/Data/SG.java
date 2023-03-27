@@ -26,7 +26,7 @@ public class SG {
     
     public static Integer totalPagar=0;
     
-    public static Integer nPelotas=2;
+    public static Integer nPelotas=30;
     
     public static Integer nInicio=10;
     public static Integer nInventario=0;
@@ -40,9 +40,9 @@ public class SG {
     public static Integer costoEmpaquetado=10;
     public static Integer costoSalida=10;
     
-    public static Materias materias = new Materias();
     
-    public static interfaz2 interfaz= new interfaz2();
+    
+    public static Interfaz interfaz= new Interfaz();
     
     
     public static void generateReport() throws IOException{

@@ -245,7 +245,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="Data.lienzo2" name="lienzo4">
+        <Container class="Data.Lienzo" name="lienzo4">
 
           <Layout>
             <DimensionLayout dim="0">
@@ -260,7 +260,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Container class="Data.lienzo2" name="lienzo5">
+        <Container class="Data.Lienzo" name="lienzo5">
 
           <Layout>
             <DimensionLayout dim="0">
@@ -425,7 +425,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="Data.lienzo2" name="lienzo2">
+        <Container class="Data.Lienzo" name="lienzo2">
 
           <Layout>
             <DimensionLayout dim="0">
@@ -503,7 +503,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="Data.lienzo2" name="lienzo1">
+        <Container class="Data.Lienzo" name="lienzo1">
 
           <Layout>
             <DimensionLayout dim="0">
@@ -542,7 +542,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
           </Events>
         </Component>
-        <Container class="Data.lienzo2" name="lienzo3">
+        <Container class="Data.Lienzo" name="lienzo3">
 
           <Layout>
             <DimensionLayout dim="0">

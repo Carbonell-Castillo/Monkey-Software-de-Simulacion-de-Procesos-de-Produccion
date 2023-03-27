@@ -12,7 +12,7 @@ import javax.swing.JPanel;
  *
  * @author diego
  */
-public class lienzo2 extends javax.swing.JPanel implements Runnable {
+public class Lienzo extends javax.swing.JPanel implements Runnable {
 
     /**
      * Creates new form lienzo
@@ -28,7 +28,7 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
     
     private boolean tope=false;
 
-    public lienzo2() {
+    public Lienzo() {
         initComponents();
         hilo = new Thread(this);
     }
@@ -155,7 +155,7 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
                 SG.nInicio-=1;
                 SG.nInventario+=1;
                     System.out.println(SG.nInventario);
-                interfaz2.MostrarMessage();                
+                Interfaz.MostrarMessage();                
                 JPanel jParent = SG.interfaz.getJpanelInventario();
                 JPanel container = SG.interfaz.getJInventario();
                 SG.interfaz.AddMaterias(SG.nInventario, jParent, container, Color.BLUE);
@@ -171,7 +171,7 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
                 SG.nProduccion+=1;
                 
                     System.out.println(SG.nInventario);
-                interfaz2.MostrarMessage();                
+                Interfaz.MostrarMessage();                
                 
                 //se elimina la anterior pelota
                 JPanel jParent = SG.interfaz.getJpanelInventario();
@@ -207,7 +207,7 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
                 SG.nEmpaquetado+=1;
                 
                     System.out.println(SG.nProduccion);
-                interfaz2.MostrarMessage();                
+                Interfaz.MostrarMessage();                
                 
                 //se elimina la anterior pelota
                 
@@ -250,7 +250,7 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
                 
                 
                     System.out.println(SG.nEmpaquetado);
-                interfaz2.MostrarMessage();                
+                Interfaz.MostrarMessage();                
                 
                 //se elimina la anterior pelota
                 
@@ -293,7 +293,7 @@ public class lienzo2 extends javax.swing.JPanel implements Runnable {
                 
                 
                     System.out.println(SG.nSalida);
-                interfaz2.MostrarMessage();                
+                Interfaz.MostrarMessage();                
                 
                 //se elimina la anterior pelota
                 
